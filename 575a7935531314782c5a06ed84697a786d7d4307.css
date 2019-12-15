@@ -1,0 +1,19 @@
+
+ .tabbrowser-tab::after, .tabbrowser-tab::before {
+     display: none !important;
+}
+ .tab-background {
+     background: #000000;
+     opacity: 0.3;
+}
+ .tabbrowser-tab[selected="true"] .tab-background {
+     background: #000000;
+     opacity: 0.9;
+}
+ ​ .tab-content {
+     padding: 0 17px !important;
+}
+ ​ .tab-line[selected="true"] {
+     opacity: 0 !important;
+}
+ 

@@ -1,0 +1,79 @@
+
+.titlebar-min {
+	margin-left: 8px !important;
+	margin-right: 5px !important;
+	border-radius:3px !important;
+	padding: 0px  !important;
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+	margin-top: 3px  !important;
+	margin-bottom: 4px  !important;
+	background-color: rgba(255, 255, 255, 0) !important;
+	 list-style-image: url("yellow.png") !important;
+}
+.titlebar-max {
+	margin-left: 5px !important;
+	margin-right: 5px !important;
+	border-radius:3px !important;
+	padding: 0px  !important;
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+	margin-top: 3px  !important;
+	margin-bottom: 4px  !important;
+	background-color: rgba(255, 255, 255, 0) !important;
+    list-style-image: url("green.png") !important;
+}
+
+.titlebar-close {
+	margin-left: 5px !important;
+	margin-right: 8px !important;
+	border-radius:3px !important;
+	padding: 0px  !important;
+	padding-left: 5px !important;
+	padding-right: 5px !important;
+	margin-top: 3px  !important;
+	margin-bottom: 4px  !important;
+	background-color: rgba(255, 255, 255, 0) !important;
+	list-style-image: url("red.png") !important;
+	/* background-image: url("red.svg") !important;
+	 background-size: 16px 16px !important;
+	 background-repeat: no-repeat;*/
+}
+
+
+:root[sizemode="maximized"] .titlebar-max:hover {
+	
+	background-color: rgba(255, 255, 255, 0) !important;
+     list-style-image: url("min.png") !important;
+}
+.titlebar-max:hover {
+	background-color: rgba(255, 255, 255, 0) !important;
+	list-style-image: url("max.png") !important;
+}
+
+.titlebar-close:hover {
+	/*cursor: pointer  !important;*/
+background-color: rgba(255, 255, 255, 0) !important;
+	list-style-image: url("closx.svg") !important;
+}
+
+.titlebar-min:hover {
+	/*cursor: pointer  !important;*/
+	background-color: rgba(255, 255, 255, 0) !important;
+	list-style-image: url("minz.png") !important;
+}
+
+.titlebar-button > .toolbarbutton-icon {
+	height: 16px !important;
+	min-height: 16px !important;
+	width: 16px !important;
+	min-width: 16px !important;
+	
+}
+
+/*ADD ONS*/
+#woop-noopscoopsnsxq_jetpack-browser-action{
+    filter: invert(0.5) !important;
+
+
+

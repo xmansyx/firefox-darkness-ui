@@ -1,0 +1,37 @@
+
+/*Density to save screen real estate*/
+ [uidensity="compact"]:root {
+     --tab-min-height: 17px !important;
+     --newtab-margin: -3px 0 -3px -3px !important;
+}
+ .tabbrowser-tab {
+     max-height: var(--tab-min-height) !important;
+}
+ .tabs-newtab-button{
+     margin: var(--newtab-margin) !important;
+}
+
+ :root[uidensity=compact] #navigator-toolbox {
+     --nav-bar-height: 33px;
+     --tab-min-height: 29px;
+}
+ :root:not([uidensity]) #navigator-toolbox {
+     --nav-bar-height: 39px;
+     --tab-min-height: 33px;
+}
+ :root[uidensity=touch] #navigator-toolbox {
+     --nav-bar-height: 41px;
+     --tab-min-height: 41px;
+}
+ #navigator-toolbox {
+     --tabbar-height: calc(var(--tab-min-height) + var(--space-above-tabbar));
+     --trigger-area-height: 5px;
+}
+ :root[chromehidden~="toolbar"] #navigator-toolbox {
+     --tabbar-height: 0.1px;
+}
+ #toolbar-menubar {
+     margin-top: 0px !important;
+    /* This is usually 0, but under Win7 can be given an extra 1px when not maximized */
+}
+ 

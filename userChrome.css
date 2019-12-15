@@ -1,0 +1,241 @@
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+toolbarbutton#alltabs-button {
+    -moz-binding: url("userChrome.xml#js");
+}
+.tabbrowser-tab{
+    border-top-right-radius: 5px; !important
+}
+:root {
+    --tabs-border: transparent !important;
+    /* active tab left & right borders - not working in 58?*/
+    --toolbox-border-bottom-color: transparent !important;
+    /* 1px line under background tabs */
+    --chrome-nav-bar-controls-border-color: transparent !important;
+  
+}
+
+:-moz-any(.tabs-newtab-button,#new-tab-button,#alltabs-button) .toolbarbutton-icon{
+    transform: scale(0.5, 0.5) !important;
+    margin-top:1px !important;
+}
+
+:root:-moz-lwtheme {
+    --toolbox-border-bottom-color: rgba(0,0,0,0) !important; 
+    
+}
+
+#nav-bar {
+    box-shadow:0px 10px 24px 0px rgba(0, 0, 0, .4)!important;
+    border:none !important;
+    padding:0px 8px !important;
+    border-top-left-radius: 13px 9px;
+    border-top-right-radius: 13px 9px;
+    
+}
+
+#bookmarks-menu-button { /* 'Show your bookmarks' toolbar button */
+    list-style-image: url('bookmarks.svg') !important;
+}
+
+
+#back-button[disabled="true"] {
+  display: none;
+}
+
+/* Hide the forward button always */
+#forward-button {
+  display: none;
+}
+
+
+#PanelUI-button,
+#customization-panel-container,
+#customization-panelWrapper .panel-arrow {
+    -moz-box-ordinal-group: 2 !important;
+    margin-right: -2px !important;
+}
+.arrowscrollbox-scrollbox{
+    margin-left: 11px;
+}
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+    border: none !important;
+    color: grey !important;
+    opacity: .2 !important;
+}
+
+.tabbrowser-tab[visuallyselected="true"] {
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.33);
+}
+#tabbrowser-tabs{
+    margin-left:11px !important;
+}
+.tab-line {
+    display: none !important;
+}
+
+/* URL Bar */
+#urlbar[focused="true"],
+#urlbar:hover, .searchbar-textbox:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+    height: 42px !important;
+}
+#tracking-protection-icon-container{
+    margin-right: 7px;
+}
+#urlbar,
+.searchbar-textbox,
+#urlbar:hover,
+.searchbar-textbox:hover {
+    background: transparent !important;
+    height: 42px !important;
+    font-size: 1.1em !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    -moz-appearance: none;
+    min-height: 24px !important;
+    cursor: default;
+    
+}
+#urlbar{
+    height: 22px !important;
+    border: none !important;
+    transition-duration: .3s;
+    font-size: 1em !important;
+}
+@namespace "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+@-moz-document url("chrome://browser/content/browser.xul") {
+    #urlbar:not([focused]) .urlbar-input-box,urlbarView-results {
+        text-align: center;
+        color: whitesmoke;
+    }
+}
+
+.urlbarView{
+    border: none !important;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    box-shadow:0px 10px 24px 0px rgba(0, 0, 0, .4)!important;
+}
+
+#pageActionButton,
+#pocket-button-box,
+ar-button,
+/* .autocomplete-history-dropmarker, */
+#identity-box,
+.urlbar-history-dropmarker.urlbar-icon.chromeclass-toolbar-additional,
+#page-action-buttons,
+#identity-icon-labels {
+    display: none !important;
+    background: transparent !important;
+}
+
+#TabsToolbar .titlebar-placeholder[type="pre-tabs"] {
+    width:1.22em !important;
+    border-right: none !important;
+}
+
+.titlebar-placeholder[type="post-tabs"] {
+    width:8px !important;
+}
+
+
+
+#PersonalToolbar {
+	max-height: none !important; /* Otherwise it's limited to 4em */
+	height: 2.5em; /* Just some ridiculous size so you know it works. */
+}
+
+
+:root:not([customizing]) #nav-bar toolbarbutton,
+:root:not([customizing]) #nav-bar #star-button-box
+{
+	opacity: 0 !important;
+	transform: scale(0, 1) !important;
+	pointer-events: none !important;
+	transition: all 350ms var(--animation-easing-function) !important;
+	transition-delay: 0.5s !important;
+}
+#alltabs-button{
+    display: none !important;
+}
+
+:root:not([customizing]) #nav-bar #nav-bar-overflow-button {
+	margin-left: unset !important;
+	margin-left: 58px !important;
+	-moz-box-ordinal-group: 2 !important;
+}
+#navigator-toolbox > #nav-bar:hover #nav-bar-overflow-button,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar #nav-bar-overflow-button,
+:root:not([customizing]) :hover > #titlebar #nav-bar-overflow-button {
+	margin-right: 0 !important;
+}
+
+#navigator-toolbox > #nav-bar:hover toolbarbutton,
+#navigator-toolbox > #nav-bar:hover #nav-bar-overflow-button,
+#navigator-toolbox > #nav-bar:hover #star-button-box,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar #nav-bar-overflow-button,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar #star-button-box,
+:root:not([customizing]) :hover > #titlebar #nav-bar-overflow-button,
+:root:not([customizing]) :hover > #titlebar #star-button-box {
+	transform: scale(1, 1) !important;
+	opacity:1 !important;
+	margin-left:0px !important;
+	pointer-events: auto !important;
+	transition: all 35ms var(--animation-easing-function) !important;
+	transition-delay: 0.1s !important;
+    
+}
+
+
+#urlbar-results,#navigator-toolbox{
+    border: 0 !important;
+
+}
+.search-one-offs{
+    display: none !important;
+}
+/* Revert tab throbber - for Nightly 57 as of 9/20/2017 */
+.tab-throbber[busy]::before {
+  background-image: url("chrome://global/skin/icons/loading.png") !important;
+  animation: unset !important;
+}
+.tab-throbber[busy]:not([progress])::before {
+  /* Grays the blue during "Connecting" state */
+  filter: grayscale(100%);
+}
+
+#urlbarView-body-inner{
+    min-width: 100px !important;
+}
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+toolbarbutton#alltabs-button{-moz-binding:url("userChrome.xml#js")}
+/* NAVBAR: Highlight URL based on security */
+
+#urlbar {
+  position: relative;
+  z-index: 1;
+}
+
+#identity-box:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: white;
+  opacity: 0.2;
+  transition: background 500ms linear; /* Fade in/out effekt */
+}
